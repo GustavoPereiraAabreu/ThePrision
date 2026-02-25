@@ -1,28 +1,44 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Lever : MonoBehaviour, IInteractable
+public class PressurePlate : MonoBehaviour
 {
     [SerializeField] private bool _once;
-    [SerializeField] private bool _isActive;
-    [SerializeField] private UnityEvent OnActive;
-    [SerializeField] private UnityEvent OnDesactive;
+    private bool _isPressed;
+    public UnityEvent OnActive;
+    public UnityEvent OnDesactive;
 
-    public void Activte()
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
     {
-        if (_isActive) 
-        {
-            OnDesactive.Invoke();
-        }
-        else
-        {
-            OnActive.Invoke();
-        }
-        _isActive = !_isActive;
 
-        if(_once)
-          Destroy(this);
     }
 
- 
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.TryGetComponent(out IStatusPlayer player))
+        {
+
+            OnActive.Invoke();
+            if (_once)
+                Destroy(this);
+
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.TryGetComponent(out IStatusPlayer player))
+        {
+
+            OnDesactive.Invoke();
+
+        }
+    }
 }

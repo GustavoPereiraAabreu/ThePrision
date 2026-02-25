@@ -43,6 +43,8 @@ public class TopDownMovement : MonoBehaviour
 
     private void LateUpdate()
     {
+        Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
+
         //Mover camera
         //Objetos que seguem o player
     }
