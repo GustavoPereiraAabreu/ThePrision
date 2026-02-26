@@ -22,23 +22,14 @@ public class PressurePlate : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out IStatusPlayer player))
-        {
-
             OnActive.Invoke();
             if (_once)
                 Destroy(this);
-
-        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.TryGetComponent(out IStatusPlayer player))
-        {
+    { 
 
             OnDesactive.Invoke();
-
-        }
     }
 }
