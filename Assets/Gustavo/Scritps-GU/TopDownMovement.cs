@@ -6,13 +6,15 @@ public class TopDownMovement : MonoBehaviour
 {
     private Rigidbody2D _rb;
     private Vector2 _movement;
+    private Animator animator;
+    private SpriteRenderer _spriteRenderer;
     [Header("Variables")]
     [SerializeField] private float _speed;
 
     private void Awake()
     {
-        
-
+        animator = GetComponent<Animator>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void OnEnable()
@@ -39,6 +41,18 @@ public class TopDownMovement : MonoBehaviour
         //Todo o resto
         //principalmente verificaçao de botão
         _movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+        animator.SetBool("Movendo", _movement != Vector2.zero);
+
+        if(_movement.x > 0)
+        {
+            _spriteRenderer.flipX = true;
+        }
+        else if (_movement.x < 0)
+        {
+            _spriteRenderer.flipX = false;
+        }
+
     }
 
     private void LateUpdate()
