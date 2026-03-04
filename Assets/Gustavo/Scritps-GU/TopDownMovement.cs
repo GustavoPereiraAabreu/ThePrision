@@ -44,7 +44,7 @@ public class TopDownMovement : MonoBehaviour
 
         animator.SetBool("Movendo", _movement != Vector2.zero);
 
-        if(_movement.x > 0)
+        if (_movement.x > 0)
         {
             _spriteRenderer.flipX = true;
         }
