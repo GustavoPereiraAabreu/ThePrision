@@ -4,6 +4,7 @@ public class BossEnemy : MonoBehaviour
 {
     private Animator animator;
     private SpriteRenderer _spriteRenderer;
+    private bool isAttacking = false;
 
     [Header("Referências")]
     public Transform player;
@@ -36,10 +37,22 @@ public class BossEnemy : MonoBehaviour
     {
         if (player == null) return;
 
-        MoveToPlayer();
-        HandleAttack();
-      
-            animator.SetBool("BossAndando", Vector2.Distance(transform.position, player.position) > stopDistance);
+        attackTimer += Time.deltaTime;
+
+        if (!isAttacking)
+        {
+            MoveToPlayer();
+            HandleAttack();
+        }
+        else
+        {
+            if (attackTimer >= attackCooldown)
+            {
+                isAttacking = false;
+            }
+        }
+
+        animator.SetBool("BossAndando", Vector2.Distance(transform.position, player.position) > stopDistance);
             if (player.position.x > transform.position.x)
             {
                 _spriteRenderer.flipX = true;
@@ -77,13 +90,15 @@ public class BossEnemy : MonoBehaviour
             Attack();
             attackTimer = 0f;
         }
-        animator.SetBool("BossAtacando", Vector2.Distance(transform.position, player.position) <= stopDistance);
+       
     }
 
     void Attack()
     {
-        Debug.Log("Boss atacou!");
+        isAttacking = true;  
+        attackTimer = 0f; 
 
+        animator.SetTrigger("BossAtacando");
         // Aqui você pode chamar o script de vida do player
         // player.GetComponent<PlayerHealth>().TakeDamage(damage);
     }
