@@ -29,7 +29,7 @@ public class BossEnemy : MonoBehaviour
 
     private void Start()
     {
-        currentHealth = maxHealth;
+        // currentHealth = maxHealth;
     }
 
     private void Update()
