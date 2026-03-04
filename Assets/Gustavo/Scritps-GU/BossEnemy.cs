@@ -70,13 +70,14 @@ public class BossEnemy : MonoBehaviour
         attackTimer += Time.deltaTime;
 
         float distance = Vector2.Distance(transform.position, player.position);
-        animator.SetBool("BossAtacando", Vector2.Distance(transform.position, player.position) <= stopDistance);
+        
 
         if (distance <= stopDistance && attackTimer >= attackCooldown)
         {
             Attack();
             attackTimer = 0f;
         }
+        animator.SetBool("BossAtacando", Vector2.Distance(transform.position, player.position) <= stopDistance);
     }
 
     void Attack()
