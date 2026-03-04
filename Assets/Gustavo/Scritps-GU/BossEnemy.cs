@@ -4,7 +4,6 @@ public class BossEnemy : MonoBehaviour
 {
     private Animator animator;
     private SpriteRenderer _spriteRenderer;
-    private bool isAttacking = false;
 
     [Header("Referências")]
     public Transform player;
@@ -15,7 +14,7 @@ public class BossEnemy : MonoBehaviour
 
     [Header("Vida")]
     public int maxHealth = 50;
-    private int currentHealth;
+    // private int currentHealth;
 
     [Header("Ataque")]
     public float attackCooldown = 2f;
@@ -39,20 +38,11 @@ public class BossEnemy : MonoBehaviour
 
         attackTimer += Time.deltaTime;
 
-        if (!isAttacking)
-        {
             MoveToPlayer();
             HandleAttack();
-        }
-        else
-        {
-            if (attackTimer >= attackCooldown)
-            {
-                isAttacking = false;
-            }
-        }
-
-        animator.SetBool("BossAndando", Vector2.Distance(transform.position, player.position) > stopDistance);
+        
+     
+            animator.SetBool("BossAndando", Vector2.Distance(transform.position, player.position) > stopDistance);
             if (player.position.x > transform.position.x)
             {
                 _spriteRenderer.flipX = true;
@@ -95,7 +85,6 @@ public class BossEnemy : MonoBehaviour
 
     void Attack()
     {
-        isAttacking = true;  
         attackTimer = 0f; 
 
         animator.SetTrigger("BossAtacando");
@@ -103,20 +92,19 @@ public class BossEnemy : MonoBehaviour
         // player.GetComponent<PlayerHealth>().TakeDamage(damage);
     }
 
-    public void TakeDamage(int amount)
-    {
-        currentHealth -= amount;
-        Debug.Log("Boss tomou dano! Vida atual: " + currentHealth);
+    //public void TakeDamage(int amount)
+    //{
+        //currentHealth -= amount;
+       // Debug.Log("Boss tomou dano! Vida atual: " + currentHealth);
 
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
-    }
+       // if (currentHealth <= 0)
+        //{
+            //Die();
+        //}
+    //}
 
-    void Die()
-    {
-        Debug.Log("Boss derrotado!");
-        Destroy(gameObject);
-    }
+  //  void Die()
+     
+      // { Debug.Log("Boss derrotado!");
+       // Destroy(gameObject); }
 }
