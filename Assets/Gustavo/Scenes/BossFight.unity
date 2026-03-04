@@ -844,6 +844,7 @@ GameObject:
   - component: {fileID: 1756778781}
   - component: {fileID: 1756778784}
   - component: {fileID: 1756778783}
+  - component: {fileID: 1756778785}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -993,6 +994,24 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.43113673, y: 0.58845806}
   m_EdgeRadius: 0
+--- !u!114 &1756778785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756778780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22c5602ad5252ac41b243abdd3e39592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossEnemy
+  player: {fileID: 1839549047}
+  speed: 3
+  stopDistance: 2
+  maxHealth: 150
+  attackCooldown: 1.5
+  damage: 15
 --- !u!1 &1839549041
 GameObject:
   m_ObjectHideFlags: 0
@@ -1004,9 +1023,9 @@ GameObject:
   - component: {fileID: 1839549047}
   - component: {fileID: 1839549046}
   - component: {fileID: 1839549045}
-  - component: {fileID: 1839549044}
   - component: {fileID: 1839549043}
   - component: {fileID: 1839549042}
+  - component: {fileID: 1839549048}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1040,7 +1059,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1839549043
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1087,19 +1106,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
---- !u!114 &1839549044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1839549041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92c06b1095d1e1d4bb18bb5955a5500d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TopDownMovement
-  _speed: 5
 --- !u!95 &1839549045
 Animator:
   serializedVersion: 7
@@ -1189,13 +1195,27 @@ Transform:
   m_GameObject: {fileID: 1839549041}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.45, y: 14.74, z: 0}
+  m_LocalPosition: {x: 1.67, y: 15.1, z: 0}
   m_LocalScale: {x: 5.160156, y: 5.160156, z: 5.160156}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 982361696}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1839549048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839549041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92c06b1095d1e1d4bb18bb5955a5500d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TopDownMovement
+  _camFollow: 0
+  _speed: 5
 --- !u!1 &1927002082
 GameObject:
   m_ObjectHideFlags: 0

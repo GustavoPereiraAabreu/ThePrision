@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 public class TopDownMovement : MonoBehaviour
 {
     private Rigidbody2D _rb;
+    [SerializeField] private bool _camFollow = true;
     private Vector2 _movement;
     private Animator animator;
     private SpriteRenderer _spriteRenderer;
@@ -57,7 +58,8 @@ public class TopDownMovement : MonoBehaviour
 
     private void LateUpdate()
     {
-        Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
+        if(_camFollow)
+            Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
 
         //Mover camera
         //Objetos que seguem o player
