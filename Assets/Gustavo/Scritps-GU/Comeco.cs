@@ -6,6 +6,8 @@ public class Comeco : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("Jail");
+        Time.timeScale = 1f;
+
     }
 }
 
