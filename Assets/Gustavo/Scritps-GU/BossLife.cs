@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class BossLife : MonoBehaviour
 {
-
     public int life = 3;
     public GameObject victoryScreen;
 

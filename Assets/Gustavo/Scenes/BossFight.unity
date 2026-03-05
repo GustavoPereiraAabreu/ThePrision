@@ -1174,7 +1174,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &716271069
 RectTransform:
@@ -7372,7 +7372,7 @@ Transform:
   m_GameObject: {fileID: 1756778780}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.8264, y: 21.9757, z: 0}
+  m_LocalPosition: {x: 9.47, y: 21.9757, z: 0}
   m_LocalScale: {x: 3.0793798, y: 2.9758737, z: 4.6072283}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7434,7 +7434,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.37237936, y: -0.22445129}
+  m_Offset: {x: 0.34915084, y: -0.17637822}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7444,7 +7444,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.14341077, y: 0.48109737}
+  m_Size: {x: 0.4531256, y: 0.5772435}
   m_EdgeRadius: 0
 --- !u!114 &1756778785
 MonoBehaviour:
@@ -7460,8 +7460,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BossEnemy
   player: {fileID: 1839549047}
   speed: 3
-  stopDistance: 2
-  damageCooldown: 1.5
+  stopDistance: 1.5
+  damageCooldown: 5
 --- !u!114 &1756778786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7474,7 +7474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c1d432854bb8be41b00b411289302d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossLife
-  life: 4
+  life: 5
   victoryScreen: {fileID: 423886674}
 --- !u!1 &1839549041
 GameObject:
@@ -7491,6 +7491,7 @@ GameObject:
   - component: {fileID: 1839549042}
   - component: {fileID: 1839549048}
   - component: {fileID: 1839549049}
+  - component: {fileID: 1839549050}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -7680,7 +7681,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TopDownMovement
   _camFollow: 0
-  _speed: 5
+  _speed: 7
 --- !u!114 &1839549049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7693,8 +7694,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de609b7cac920b44e9c2b60c6ee45ae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerLife
-  life: 3
+  life: 10
   lifeText: {fileID: 1444893921}
+--- !u!114 &1839549050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839549041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56cafd263d505e42a8fd5a4dd427c5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
+  boss: {fileID: 1756778782}
+  attackRange: 5
+  attackKey: 323
 --- !u!1 &1847430313
 GameObject:
   m_ObjectHideFlags: 0

@@ -1580,7 +1580,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &536881338
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1639,6 +1639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92c06b1095d1e1d4bb18bb5955a5500d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TopDownMovement
+  _camFollow: 1
   _speed: 5
 --- !u!1 &617137298
 GameObject:
@@ -3701,7 +3702,7 @@ GameObject:
   - component: {fileID: 1567975239}
   - component: {fileID: 1567975238}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: PauseMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

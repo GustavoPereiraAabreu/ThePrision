@@ -32,6 +32,20 @@ public class BossEnemy : MonoBehaviour
 
         animator.SetBool("BossAndando",
             Vector2.Distance(transform.position, player.position) > stopDistance);
+
+        if (player.position.x < transform.position.x)
+        {
+            _spriteRenderer.flipX = false;
+        }
+        else
+        {
+            _spriteRenderer.flipX = true;
+        }
+
+        if (Vector2.Distance(transform.position, player.position) <= stopDistance)
+        {
+            animator.SetTrigger("BossAtacando");
+        }
     }
 
     void MoveToPlayer()
@@ -65,15 +79,6 @@ public class BossEnemy : MonoBehaviour
             }
         }
     }
-    void Flip()
-    {
-        if (player == null) return;
-
-        if (player.position.x > transform.position.x)
-            _spriteRenderer.flipX = false;
-        else
-            _spriteRenderer.flipX = true;
-    }
-
+   
 }
 
