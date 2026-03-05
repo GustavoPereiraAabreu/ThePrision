@@ -48,17 +48,14 @@ public class BossEnemy : MonoBehaviour
         animator.SetBool("BossAndando",
             Vector2.Distance(transform.position, player.position) > stopDistance);
 
-        if (player.position.x < transform.position.x)
+       if (player.position.x < transform.position.x)
         {
-            // Olha para a esquerda
-            transform.localScale = new Vector3(1, 1, 1);
+            _spriteRenderer.flipX = false;
         }
         else
         {
-            // Olha para a direita (Inverte o eixo X do objeto inteiro)
-            transform.localScale = new Vector3(-1, 1, 1);
+            _spriteRenderer.flipX = true;
         }
-
     }
 
     void MoveToPlayer()
