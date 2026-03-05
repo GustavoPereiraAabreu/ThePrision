@@ -3,28 +3,38 @@ using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int health = 3;
-    public TextMeshProUGUI healthText;
+    public int life = 3;
+    public TextMeshProUGUI lifeText;
+    public GameObject defeatScreen;
 
     void Start()
     {
-        gameObject.tag = "Player";
-        UpdateHealth();
+        UpdateUI();
     }
 
-    public void TakeDamage()
+    public void TakeDamage(int damage)
     {
-        health--;
-        UpdateHealth();
+        life -= damage;
 
-        if (health <= 0)
+        UpdateUI();
+
+        if (life <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
     }
 
-    void UpdateHealth()
+    void UpdateUI()
     {
-        healthText.text = "Vida: " + health;
+        lifeText.text = "Life: " + life;
+    }
+
+    void Die()
+    {
+        Debug.Log("Player morreu");
+
+        defeatScreen.SetActive(true);
+
+        Time.timeScale = 0f;
     }
 }

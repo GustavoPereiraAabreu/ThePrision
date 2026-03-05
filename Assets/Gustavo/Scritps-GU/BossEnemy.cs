@@ -12,8 +12,8 @@ public class BossEnemy : MonoBehaviour
     public float speed = 3f;
     public float stopDistance = 2f;
 
-    [Header("Vida")]
-    public int maxHealth = 50;
+    //[Header("Vida")]
+   // public int maxHealth = 50;
     // private int currentHealth;
 
     [Header("Ataque")]
