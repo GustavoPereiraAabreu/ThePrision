@@ -12,9 +12,6 @@ public class BossEnemy : MonoBehaviour
     public float speed = 3f;
     public float stopDistance = 2f;
 
-    //[Header("Vida")]
-   // public int maxHealth = 50;
-    // private int currentHealth;
 
     [Header("Ataque")]
     public float attackCooldown = 2f;
@@ -27,10 +24,6 @@ public class BossEnemy : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void Start()
-    {
-        // currentHealth = maxHealth;
-    }
 
     private void Update()
     {
@@ -43,14 +36,6 @@ public class BossEnemy : MonoBehaviour
         
      
             animator.SetBool("BossAndando", Vector2.Distance(transform.position, player.position) > stopDistance);
-            if (player.position.x > transform.position.x)
-            {
-                _spriteRenderer.flipX = true;
-            }
-            else if (player.position.x < transform.position.x)
-            {
-                _spriteRenderer.flipX = false;
-            }
 
     }
 
@@ -88,23 +73,7 @@ public class BossEnemy : MonoBehaviour
         attackTimer = 0f; 
 
         animator.SetTrigger("BossAtacando");
-        // Aqui você pode chamar o script de vida do player
-        // player.GetComponent<PlayerHealth>().TakeDamage(damage);
+        
     }
 
-    //public void TakeDamage(int amount)
-    //{
-        //currentHealth -= amount;
-       // Debug.Log("Boss tomou dano! Vida atual: " + currentHealth);
-
-       // if (currentHealth <= 0)
-        //{
-            //Die();
-        //}
-    //}
-
-  //  void Die()
-     
-      // { Debug.Log("Boss derrotado!");
-       // Destroy(gameObject); }
 }
