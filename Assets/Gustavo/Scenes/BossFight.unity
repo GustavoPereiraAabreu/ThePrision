@@ -6945,7 +6945,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -6976,7 +6976,7 @@ MonoBehaviour:
   player: {fileID: 1839549047}
   speed: 3
   stopDistance: 1.5
-  damageCooldown: 5
+  damageCooldown: 2.5
 --- !u!114 &1756778786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6989,7 +6989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c1d432854bb8be41b00b411289302d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossLife
-  life: 5
+  life: 7
   victoryScreen: {fileID: 423886674}
 --- !u!1 &1839549041
 GameObject:
@@ -7211,7 +7211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de609b7cac920b44e9c2b60c6ee45ae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerLife
-  life: 10
+  life: 5
   lifeText: {fileID: 1444893921}
   defeatScreen: {fileID: 334708252}
 --- !u!114 &1839549050
@@ -7227,7 +7227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
   boss: {fileID: 1756778782}
-  attackRange: 5
+  attackRange: 3.5
   attackKey: 323
 --- !u!1 &1847430313
 GameObject:
