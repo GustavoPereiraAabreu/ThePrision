@@ -2,18 +2,21 @@ using UnityEngine;
 
 public class BossEnemy : MonoBehaviour
 {
+    [SerializeField] private float tempoEstaticoInicial = 3f;
+    private bool podeMover = false;
+    [SerializeField] private float timerInicial = 0f;
     private Animator animator;
     private SpriteRenderer _spriteRenderer;
 
     [Header("Referências")]
-    public Transform player;
+    [SerializeField] private Transform player;
 
     [Header("Movimento")]
-    public float speed = 3f;
-    public float stopDistance = 0.5f;
+    [SerializeField] private float speed = 3f;
+    [SerializeField] private float stopDistance = 0.5f;
 
     [Header("Dano por contato")]
-    public float damageCooldown = 1.5f;
+    [SerializeField] private float damageCooldown = 1.5f;
     private float damageTimer;
 
     void Awake()
@@ -24,6 +27,18 @@ public class BossEnemy : MonoBehaviour
 
     void Update()
     {
+        if (!podeMover)
+        {
+            timerInicial += Time.deltaTime;
+            if (timerInicial >= tempoEstaticoInicial)
+            {
+                podeMover = true;
+            }
+
+            animator.SetBool("BossAndando", false);
+            return;
+        }
+
         if (player == null) return;
 
         damageTimer += Time.deltaTime;
@@ -35,11 +50,13 @@ public class BossEnemy : MonoBehaviour
 
         if (player.position.x < transform.position.x)
         {
-            _spriteRenderer.flipX = false;
+            // Olha para a esquerda
+            transform.localScale = new Vector3(1, 1, 1);
         }
         else
         {
-            _spriteRenderer.flipX = true;
+            // Olha para a direita (Inverte o eixo X do objeto inteiro)
+            transform.localScale = new Vector3(-1, 1, 1);
         }
 
     }
