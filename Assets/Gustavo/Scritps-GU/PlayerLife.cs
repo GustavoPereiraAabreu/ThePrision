@@ -6,6 +6,8 @@ public class PlayerLife : MonoBehaviour
     public int life = 3;
     public TextMeshProUGUI lifeText;
 
+    public GameObject defeatScreen;
+
     void Start()
     {
         UpdateLifeUI();
@@ -30,6 +32,15 @@ public class PlayerLife : MonoBehaviour
     void Die()
     {
         Debug.Log("Player morreu");
+
+        if (defeatScreen != null)
+        {
+            defeatScreen.SetActive(true);
+        }
+
         Time.timeScale = 0f;
+
     }
+
+      
 }
