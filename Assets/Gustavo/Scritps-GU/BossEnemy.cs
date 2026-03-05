@@ -42,10 +42,6 @@ public class BossEnemy : MonoBehaviour
             _spriteRenderer.flipX = true;
         }
 
-        if (Vector2.Distance(transform.position, player.position) <= stopDistance)
-        {
-            animator.SetTrigger("BossAtacando");
-        }
     }
 
     void MoveToPlayer()

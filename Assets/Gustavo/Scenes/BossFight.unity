@@ -7176,8 +7176,8 @@ Transform:
   m_GameObject: {fileID: 1839549041}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.0028, y: 14.3736, z: 0}
-  m_LocalScale: {x: 3.4489455, y: 3.3330173, z: 5.160156}
+  m_LocalPosition: {x: 7.9962, y: 14.357, z: 0}
+  m_LocalScale: {x: 6.2038383, y: 5.995311, z: 9.281901}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 982361696}
@@ -7198,7 +7198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TopDownMovement
   _camFollow: 0
-  _speed: 7
+  _speed: 5
 --- !u!114 &1839549049
 MonoBehaviour:
   m_ObjectHideFlags: 0
