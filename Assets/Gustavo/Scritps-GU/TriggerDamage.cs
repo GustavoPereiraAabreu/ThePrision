@@ -2,25 +2,21 @@ using UnityEngine;
 
 public class TriggerDamage : MonoBehaviour
 {
-    public int damageAmount = 10;
-    private void OnCollisionEnter2D(Collision2D collision)
+    public int damage = 1;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        PlayerHealth player = collision.GetComponent<PlayerHealth>();
+        BossHealth boss = collision.GetComponent<BossHealth>();
+
+        if (player != null)
         {
-            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(damageAmount);
-            }
+            player.TakeDamage(damage);
         }
 
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (boss != null)
         {
-            BossHealth enemyHealth = collision.gameObject.GetComponent<BossHealth>();
-            if (enemyHealth != null)
-            {
-                enemyHealth.TakeDamage(damageAmount);
-            }
+            boss.TakeDamage(damage);
         }
     }
 }
