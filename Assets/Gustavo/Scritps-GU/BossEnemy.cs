@@ -10,33 +10,28 @@ public class BossEnemy : MonoBehaviour
 
     [Header("Movimento")]
     public float speed = 3f;
-    public float stopDistance = 2f;
+    public float stopDistance = 0.5f;
 
+    [Header("Dano por contato")]
+    public float damageCooldown = 1.5f;
+    private float damageTimer;
 
-    [Header("Ataque")]
-    public float attackCooldown = 2f;
-    public int damage = 10;
-    private float attackTimer;
-
-    public void Awake()
+    void Awake()
     {
         animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-
-    private void Update()
+    void Update()
     {
         if (player == null) return;
 
-        attackTimer += Time.deltaTime;
+        damageTimer += Time.deltaTime;
 
-            MoveToPlayer();
-            HandleAttack();
-        
-     
-            animator.SetBool("BossAndando", Vector2.Distance(transform.position, player.position) > stopDistance);
+        MoveToPlayer();
 
+        animator.SetBool("BossAndando",
+            Vector2.Distance(transform.position, player.position) > stopDistance);
     }
 
     void MoveToPlayer()
@@ -53,27 +48,32 @@ public class BossEnemy : MonoBehaviour
         }
     }
 
-    void HandleAttack()
+    void OnCollisionStay2D(Collision2D collision)
     {
-        attackTimer += Time.deltaTime;
-
-        float distance = Vector2.Distance(transform.position, player.position);
-        
-
-        if (distance <= stopDistance && attackTimer >= attackCooldown)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Attack();
-            attackTimer = 0f;
+            if (damageTimer >= damageCooldown)
+            {
+                PlayerLife playerLife = collision.gameObject.GetComponent<PlayerLife>();
+
+                if (playerLife != null)
+                {
+                    playerLife.TakeDamage();
+                }
+
+                damageTimer = 1f;
+            }
         }
-       
     }
-
-    void Attack()
+    void Flip()
     {
-        attackTimer = 0f; 
+        if (player == null) return;
 
-        animator.SetTrigger("BossAtacando");
-        
+        if (player.position.x > transform.position.x)
+            _spriteRenderer.flipX = false;
+        else
+            _spriteRenderer.flipX = true;
     }
 
 }
+
