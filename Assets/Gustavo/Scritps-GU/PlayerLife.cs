@@ -31,7 +31,7 @@ public class PlayerLife : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("Player morreu");
+    
 
         if (defeatScreen != null)
         {

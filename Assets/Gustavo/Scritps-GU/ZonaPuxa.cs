@@ -1,16 +1,38 @@
 using UnityEngine;
 
-public class ZonaPuxa : MonoBehaviour
+public class ZonaPuxar : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public float forcaPuxao = 5f; 
+    private Transform playerTransform;
+    private bool playerNaArea = false;
+
+    
+    void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            playerTransform = other.transform;
+            playerNaArea = true;
+        }
     }
 
-    // Update is called once per frame
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerNaArea = false;
+        }
+    }
+
     void Update()
     {
         
+        if (playerNaArea && playerTransform != null)
+        {
+            playerTransform.position = Vector2.MoveTowards(
+                playerTransform.position,
+                transform.position,
+                forcaPuxao * Time.deltaTime);
+        }
     }
 }

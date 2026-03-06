@@ -17,7 +17,6 @@ public class BossLife : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("Boss derrotado!");
 
         if (victoryScreen != null)
         {

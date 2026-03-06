@@ -13,7 +13,7 @@ public class Item : MonoBehaviour
 
     void Coletar()
     {
-        Debug.Log("Item coletado!");
+    
         Destroy(gameObject);
     }
 }
