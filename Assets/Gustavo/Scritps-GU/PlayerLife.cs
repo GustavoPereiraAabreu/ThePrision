@@ -3,7 +3,7 @@ using TMPro;
 
 public class PlayerLife : MonoBehaviour
 {
-    public int life = 3;
+    [SerializeField] private int life = 3;
     public TextMeshProUGUI lifeText;
 
     public GameObject defeatScreen;

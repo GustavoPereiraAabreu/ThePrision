@@ -8,6 +8,7 @@ public class BossEnemy : MonoBehaviour
     private Animator animator;
     private SpriteRenderer _spriteRenderer;
 
+
     [Header("Referências")]
     [SerializeField] private Transform player;
 
