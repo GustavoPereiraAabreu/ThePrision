@@ -1237,7 +1237,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: -1869315837
+  m_SortingLayerID: -105541197
   m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!224 &716271069
@@ -1927,8 +1927,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -1869315837
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300062, guid: 9f8f114589864b6489859a58fbb6baf9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6320,13 +6320,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619326045}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.058, y: -0.016, z: 0}
-  m_LocalScale: {x: 0.028762495, y: 0.028762495, z: 0.028762495}
+  m_LocalRotation: {x: -0, y: -0, z: -0.10359599, w: 0.9946195}
+  m_LocalPosition: {x: -0.067, y: -0.031, z: 0}
+  m_LocalScale: {x: 0.00994981, y: 0.00994981, z: 0.00994981}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 204935690}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -11.893}
 --- !u!212 &1619326047
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6374,13 +6374,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 11
-  m_Sprite: {fileID: -1854253849714482944, guid: 599d7a761b073c94889bc5e4accba93b,
+  m_Sprite: {fileID: 7480872833159709468, guid: b8ffae0c16a14bb4982783af4a10d146,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 7.72, y: 10.94}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -7638,13 +7638,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2117754491}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.059, y: 0.013, z: 0}
-  m_LocalScale: {x: 0.04848949, y: 0.04848949, z: 0.04848949}
+  m_LocalRotation: {x: -0, y: -0, z: 0.2097085, w: 0.977764}
+  m_LocalPosition: {x: 0.076, y: 0.009, z: 0}
+  m_LocalScale: {x: 0.113779135, y: 0.11721461, z: 0.04848949}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 124224342}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 24.211}
 --- !u!212 &2117754493
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7692,7 +7692,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -3770763083538941003, guid: 43065c4df939b3d48ab3a7e5855bcd11,
+  m_Sprite: {fileID: -6694301902034670276, guid: bfc22305fa31fa945add9c67a357ae05,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
