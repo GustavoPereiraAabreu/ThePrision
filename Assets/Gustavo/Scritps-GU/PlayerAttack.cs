@@ -6,11 +6,18 @@ public class PlayerAttack : MonoBehaviour
     public float attackRange = 1.5f;
     public KeyCode attackKey = KeyCode.Mouse0;
 
+    [Header("Configurações de Cooldown")]
+    public float attackCooldown = 0.5f; 
+    private float nextAttackTime = 0f; 
+
     void Update()
     {
-        if (Input.GetKeyDown(attackKey))
+        
+        if (Input.GetKeyDown(attackKey) && Time.time >= nextAttackTime)
         {
             Attack();
+
+            nextAttackTime = Time.time + attackCooldown;
         }
     }
 
