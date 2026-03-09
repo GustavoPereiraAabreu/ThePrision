@@ -6912,6 +6912,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BossLife
   life: 20
   victoryScreen: {fileID: 423886674}
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
+  flashDuration: 0.1
 --- !u!1 &1839549041
 GameObject:
   m_ObjectHideFlags: 0
@@ -7134,6 +7136,8 @@ MonoBehaviour:
   life: 10
   lifeText: {fileID: 1444893921}
   defeatScreen: {fileID: 334708252}
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
+  flashDuration: 0.1
 --- !u!114 &1839549050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7149,6 +7153,7 @@ MonoBehaviour:
   boss: {fileID: 1756778782}
   attackRange: 1.5
   attackKey: 323
+  attackCooldown: 2
 --- !u!1 &1847430313
 GameObject:
   m_ObjectHideFlags: 0
