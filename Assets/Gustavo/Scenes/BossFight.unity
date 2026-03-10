@@ -7137,7 +7137,7 @@ MonoBehaviour:
   lifeText: {fileID: 1444893921}
   defeatScreen: {fileID: 334708252}
   damageColor: {r: 1, g: 0, b: 0, a: 1}
-  flashDuration: 0.1
+  flashDuration: 0.5
 --- !u!114 &1839549050
 MonoBehaviour:
   m_ObjectHideFlags: 0
